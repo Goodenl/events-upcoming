@@ -1,0 +1,16 @@
+@import '../../../scss/utils/variables';
+@import '../../../scss/utils/mixins';
+
+.cardsList {
+  @include reset-list();
+  @include fl-row();
+  flex-wrap: wrap;
+
+  margin-bottom: rem(60);
+
+  gap: rem(calc(var(--subline-rem) * 2 - 2));
+
+  @media screen and (max-width: $pad + px ) and (min-width:  $phone + px) {
+  	justify-content: center;
+  }
+}

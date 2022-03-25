@@ -1,0 +1,45 @@
+@import '../../../scss/utils/variables';
+@import '../../../scss/utils/mixins';
+
+.container {
+  @include container(rem(calc(1270 + var(--subline-rem) * 4)));
+  @include fl-column();
+  @include dflex(center, nowrap, flex-start);
+
+  padding: 0 rem(calc(var(--subline-rem) * 4));
+  padding-top: rem(450);
+  padding-bottom: rem(65);
+
+  > * {
+  	z-index: 1;
+  }
+}
+
+.eventsUpcoming {
+	&:before {
+		content: "";
+		position: absolute;
+		bottom: rem(calc(var(--subline-rem) * 6));
+		top: 0;
+		left: 0;
+		right: 0;
+
+		background-image: url('../../../images/bg/main-bg.jpg');
+		background-position-y: top;
+		background-position-x: center;
+		background-size: cover;
+		z-index: -2;
+	}
+
+	&:after {
+		content: "";
+
+		background: linear-gradient(180deg, var(--color-D3-2-a) 0%, var(--color-D2-2-a) 27.08%, var(--color-D1-2-a) 42.71%, var(--color-D0-2) 100%);
+		position: absolute;
+		top: rem(105);
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 0;
+	}
+}
